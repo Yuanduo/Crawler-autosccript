@@ -1,0 +1,1 @@
+function init(){var c=0;var b=0;var e=document.getElementById("post_head");ww.downloadSource_static();if(e!==null){b=1;var d=e.getElementsByTagName("a");for(var a=0;a<d.length;a++){if(d[a].innerHTML==="обрЁ"){c=1;simulate(d[a],"click");break}}}if(b==0||b==1&&c==0){ww.endOfPage();return true}}init();

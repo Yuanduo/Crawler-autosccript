@@ -1,0 +1,1 @@
+function simulate(b,d){var a=document.createEvent("MouseEvents");a.initEvent(d,true,true);b.dispatchEvent(a)};

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="crawler" default="js.compress">
+	<!--yuicompressor程序路径-->
+    <property name="yuicompressor.jar" location="lib/yuicompressor-2.4.7.jar" />  
+	<!--未压缩的js路径-->
+    <property name="js.build.dir" location="." />  
+	<!--压缩后的js存放路径-->
+    <property name="dist.dir" location="js_min" />  
+	
+<target name="init">
+	<mkdir dir="${dist.dir}"/>
+</target>
+<!-- JS Compress -->  
+<target name="js.compress" depends="init">  
+    <!-- java -jar yuicompressor-2.4.1.jar -o d:/temp/hello_min.js hello.js -->  
+    <apply executable="java" parallel="false" failonerror="true">  
+        <fileset dir="${js.build.dir}" includes="*.js" />  
+        <arg line="-jar" />  
+        <arg path="${yuicompressor.jar}" />  
+        <arg line="--charset gbk" />  
+        <srcfile />  
+        <arg line="-o" />  
+        <mapper type="glob" from="*.js" to="${dist.dir}/*.js" />  
+        <targetfile />  
+    </apply>  
+</target>
+	
+<target name="clean">
+	<delete dir="${dist.dir}"/>
+</target>
+	
+</project> 

@@ -1,0 +1,1 @@
+function init(){var f=0;var d=0;var e=document.getElementsByTagName("div");ww.downloadSource_static();for(var b=0;b<e.length;b++){if(e[b].className==="page"){d=1;var c=e[b].getElementsByTagName("a");for(var a=0;a<c.length;a++){if(c[a].className==="end"&&c[a].innerHTML!=="ÉÏÒ»Ò³"){f=1;simulate(c[a],"click");break}}break}}if(d==0||d==1&&f==0){ww.endOfPage();return true}}init();

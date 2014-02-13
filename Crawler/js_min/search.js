@@ -1,0 +1,1 @@
+function timeCount(){scrollBy(0,10000);setTimeout("findp()",2000)}function findp(){var c=0;ww.downloadSource();var b=document.getElementsByTagName("A");for(var a=0;a<b.length&&!c;a++){if(b[a].textContent.indexOf("ÏÂÒ»Ò³")!=-1||b[a].textContent.indexOf("ÏÂÒ³")!=-1){c=1;simulate(b[a],"click")}}if(c==0){ww.endOfPage();return true}timeCount()}timeCount();

@@ -1,0 +1,250 @@
+#
+# An unexpected error has been detected by Java Runtime Environment:
+#
+#  EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x0e58be38, pid=4588, tid=968
+#
+# Java VM: Java HotSpot(TM) Client VM (11.3-b02 mixed mode windows-x86)
+# Problematic frame:
+# C  [QtWebKit4.dll+0x37be38]
+#
+# If you would like to submit a bug report, please visit:
+#   http://java.sun.com/webapps/bugreport/crash.jsp
+# The crash happened outside the Java Virtual Machine in native code.
+# See problematic frame for where to report the bug.
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x01989800):  JavaThread "main" [_thread_in_native, id=968, stack(0x00370000,0x003c0000)]
+
+siginfo: ExceptionCode=0xc0000005, reading address 0x00000001
+
+Registers:
+EAX=0x0000335f, EBX=0x00000001, ECX=0x00000000, EDX=0x110e22a2
+ESP=0x003bc4f0, EBP=0x00000000, ESI=0x00000001, EDI=0x00000000
+EIP=0x0e58be38, EFLAGS=0x00010202
+
+Top of Stack: (sp=0x003bc4f0)
+0x003bc4f0:   003bc7a0 0c985d18 110e22a2 003bc568
+0x003bc500:   3e9af35f 00000001 00003fff 00000000
+0x003bc510:   13f05008 110e22a2 ffffffff 13f11d84
+0x003bc520:   0c9e36a0 0e58c454 003bc538 0000335f
+0x003bc530:   003bd180 003bc7bc 45c3c0a7 003bd180
+0x003bc540:   110e22a2 0e58c942 003bc574 003bc568
+0x003bc550:   003bc568 45c3c0c3 003bc7a0 003bd180
+0x003bc560:   003bc7bc 00000000 110e22a2 00000001 
+
+Instructions: (pc=0x0e58be38)
+0x0e58be28:   f9 75 ed 8b 44 24 3c 8b 5c 24 14 f6 c3 01 74 08
+0x0e58be38:   66 8b 0e 66 3b 0a 75 2f 8b 44 24 38 8b 54 24 2c 
+
+
+Stack: [0x00370000,0x003c0000],  sp=0x003bc4f0,  free space=305k
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+C  [QtWebKit4.dll+0x37be38]
+
+[error occurred during error reporting (printing native stack), id 0xc0000005]
+
+Java frames: (J=compiled Java code, j=interpreted, Vv=VM code)
+j  com.trolltech.qt.gui.QApplication.exec()I+0
+j  com.liu.ui.CrawlerImpl.main([Ljava/lang/String;)V+16
+v  ~StubRoutines::call_stub
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+  0x0bd5d000 JavaThread "Timer-24" [_thread_blocked, id=5584, stack(0x0efa0000,0x0eff0000)]
+  0x0bd2cc00 JavaThread "Timer-23" [_thread_blocked, id=5496, stack(0x0fd70000,0x0fdc0000)]
+  0x0bd28000 JavaThread "Timer-15" [_thread_blocked, id=5480, stack(0x15070000,0x150c0000)]
+  0x0be56c00 JavaThread "Timer-13" [_thread_blocked, id=5416, stack(0x135f0000,0x13640000)]
+  0x0bd6c800 JavaThread "Timer-11" [_thread_blocked, id=5796, stack(0x14f20000,0x14f70000)]
+  0x0bd6b800 JavaThread "Timer-9" [_thread_blocked, id=4580, stack(0x13690000,0x136e0000)]
+  0x01a76c00 JavaThread "Timer-7" [_thread_blocked, id=4900, stack(0x13d30000,0x13d80000)]
+  0x0bd9cc00 JavaThread "Timer-5" [_thread_blocked, id=4340, stack(0x0fc50000,0x0fca0000)]
+  0x0bd54800 JavaThread "Timer-1" [_thread_blocked, id=5200, stack(0x0f440000,0x0f490000)]
+  0x0bd5a800 JavaThread "Thread-0" daemon [_thread_blocked, id=2920, stack(0x0c080000,0x0c0d0000)]
+  0x01a67000 JavaThread "Low Memory Detector" daemon [_thread_blocked, id=2948, stack(0x0bc70000,0x0bcc0000)]
+  0x01a34400 JavaThread "CompilerThread0" daemon [_thread_blocked, id=5616, stack(0x0bc20000,0x0bc70000)]
+  0x01a34000 JavaThread "Attach Listener" daemon [_thread_blocked, id=2244, stack(0x0bbd0000,0x0bc20000)]
+  0x01a33400 JavaThread "Signal Dispatcher" daemon [_thread_blocked, id=6128, stack(0x0bb80000,0x0bbd0000)]
+  0x01a23400 JavaThread "Finalizer" daemon [_thread_blocked, id=5440, stack(0x0bb30000,0x0bb80000)]
+  0x01a1dc00 JavaThread "Reference Handler" daemon [_thread_blocked, id=3084, stack(0x0bae0000,0x0bb30000)]
+=>0x01989800 JavaThread "main" [_thread_in_native, id=968, stack(0x00370000,0x003c0000)]
+
+Other Threads:
+  0x01a1a800 VMThread [stack: 0x0ba90000,0x0bae0000] [id=2264]
+  0x01a77800 WatcherThread [stack: 0x0bcc0000,0x0bd10000] [id=4540]
+
+VM state:not at safepoint (normal execution)
+
+VM Mutex/Monitor currently owned by a thread: None
+
+Heap
+ def new generation   total 960K, used 225K [0x03a90000, 0x03b90000, 0x03f70000)
+  eden space 896K,  20% used [0x03a90000, 0x03abeee8, 0x03b70000)
+  from space 64K,  58% used [0x03b80000, 0x03b89648, 0x03b90000)
+  to   space 64K,   0% used [0x03b70000, 0x03b70000, 0x03b80000)
+ tenured generation   total 4096K, used 1298K [0x03f70000, 0x04370000, 0x07a90000)
+   the space 4096K,  31% used [0x03f70000, 0x040b4918, 0x040b4a00, 0x04370000)
+ compacting perm gen  total 12288K, used 9134K [0x07a90000, 0x08690000, 0x0ba90000)
+   the space 12288K,  74% used [0x07a90000, 0x0837bb20, 0x0837bc00, 0x08690000)
+No shared spaces configured.
+
+Dynamic libraries:
+0x00400000 - 0x00424000 	C:\Users\chenlu\AppData\Local\MyEclipse\Common\binary\com.sun.java.jdk.win32.x86_1.6.0.013\bin\javaw.exe
+0x77380000 - 0x774bc000 	C:\Windows\SYSTEM32\ntdll.dll
+0x75c50000 - 0x75d24000 	C:\Windows\system32\kernel32.dll
+0x75780000 - 0x757cb000 	C:\Windows\system32\KERNELBASE.dll
+0x76d40000 - 0x76de0000 	C:\Windows\system32\ADVAPI32.dll
+0x76f20000 - 0x76fcc000 	C:\Windows\system32\msvcrt.dll
+0x77510000 - 0x77529000 	C:\Windows\SYSTEM32\sechost.dll
+0x75840000 - 0x758e1000 	C:\Windows\system32\RPCRT4.dll
+0x75b80000 - 0x75c49000 	C:\Windows\system32\USER32.dll
+0x77540000 - 0x7758e000 	C:\Windows\system32\GDI32.dll
+0x77530000 - 0x7753a000 	C:\Windows\system32\LPK.dll
+0x75d30000 - 0x75dcd000 	C:\Windows\system32\USP10.dll
+0x77590000 - 0x775af000 	C:\Windows\system32\IMM32.DLL
+0x77110000 - 0x771dc000 	C:\Windows\system32\MSCTF.dll
+0x7c340000 - 0x7c396000 	C:\Users\chenlu\AppData\Local\MyEclipse\Common\binary\com.sun.java.jdk.win32.x86_1.6.0.013\jre\bin\msvcr71.dll
+0x6d8b0000 - 0x6db06000 	C:\Users\chenlu\AppData\Local\MyEclipse\Common\binary\com.sun.java.jdk.win32.x86_1.6.0.013\jre\bin\client\jvm.dll
+0x73c20000 - 0x73c52000 	C:\Windows\system32\WINMM.dll
+0x75400000 - 0x7544b000 	C:\Windows\system32\apphelp.dll
+0x6d340000 - 0x6d348000 	C:\Users\chenlu\AppData\Local\MyEclipse\Common\binary\com.sun.java.jdk.win32.x86_1.6.0.013\jre\bin\hpi.dll
+0x774c0000 - 0x774c5000 	C:\Windows\system32\PSAPI.DLL
+0x6d860000 - 0x6d86c000 	C:\Users\chenlu\AppData\Local\MyEclipse\Common\binary\com.sun.java.jdk.win32.x86_1.6.0.013\jre\bin\verify.dll
+0x6d3e0000 - 0x6d3ff000 	C:\Users\chenlu\AppData\Local\MyEclipse\Common\binary\com.sun.java.jdk.win32.x86_1.6.0.013\jre\bin\java.dll
+0x6d8a0000 - 0x6d8af000 	C:\Users\chenlu\AppData\Local\MyEclipse\Common\binary\com.sun.java.jdk.win32.x86_1.6.0.013\jre\bin\zip.dll
+0x67000000 - 0x67225000 	C:\Users\chenlu\AppData\Local\Temp\QtJambi_chenlu_x86_4.7.1_msvc2008-20101128-1649\lib\QtCore4.dll
+0x75dd0000 - 0x75f2c000 	C:\Windows\system32\ole32.dll
+0x76ee0000 - 0x76f15000 	C:\Windows\system32\WS2_32.dll
+0x77500000 - 0x77506000 	C:\Windows\system32\NSI.dll
+0x6e7d0000 - 0x6e85e000 	C:\Windows\WinSxS\x86_microsoft.vc90.crt_1fc8b3b9a1e18e3b_9.0.30729.4926_none_508ed732bcbc0e5a\MSVCP90.dll
+0x6e720000 - 0x6e7c3000 	C:\Windows\WinSxS\x86_microsoft.vc90.crt_1fc8b3b9a1e18e3b_9.0.30729.4926_none_508ed732bcbc0e5a\MSVCR90.dll
+0x10000000 - 0x10033000 	C:\Users\chenlu\AppData\Local\Temp\QtJambi_chenlu_x86_4.7.1_msvc2008-20101128-1649\lib\qtjambi.dll
+0x0c0d0000 - 0x0c1b4000 	C:\Users\chenlu\AppData\Local\Temp\QtJambi_chenlu_x86_4.7.1_msvc2008-20101128-1649\lib\com_trolltech_qt_core.dll
+0x65000000 - 0x657aa000 	C:\Users\chenlu\AppData\Local\Temp\QtJambi_chenlu_x86_4.7.1_msvc2008-20101128-1649\lib\QtGui4.dll
+0x76c60000 - 0x76cdb000 	C:\Windows\system32\COMDLG32.dll
+0x76ce0000 - 0x76d37000 	C:\Windows\system32\SHLWAPI.dll
+0x74210000 - 0x743ae000 	C:\Windows\WinSxS\x86_microsoft.windows.common-controls_6595b64144ccf1df_6.0.7600.16661_none_420fe3fa2b8113bd\COMCTL32.dll
+0x76010000 - 0x76c59000 	C:\Windows\system32\SHELL32.dll
+0x758f0000 - 0x7597f000 	C:\Windows\system32\OLEAUT32.dll
+0x70140000 - 0x70191000 	C:\Windows\system32\WINSPOOL.DRV
+0x0c390000 - 0x0c87f000 	C:\Users\chenlu\AppData\Local\Temp\QtJambi_chenlu_x86_4.7.1_msvc2008-20101128-1649\lib\com_trolltech_qt_gui.dll
+0x73450000 - 0x73490000 	C:\Windows\system32\uxtheme.dll
+0x73120000 - 0x73133000 	C:\Windows\system32\dwmapi.dll
+0x75450000 - 0x7545c000 	C:\Windows\system32\CRYPTBASE.dll
+0x74f80000 - 0x74f96000 	C:\Windows\system32\CRYPTSP.dll
+0x74d20000 - 0x74d5b000 	C:\Windows\system32\rsaenh.dll
+0x754c0000 - 0x754ce000 	C:\Windows\system32\RpcRtRemote.dll
+0x72720000 - 0x727a4000 	C:\Windows\WinSxS\x86_microsoft.windows.common-controls_6595b64144ccf1df_5.82.7600.16661_none_ebfb56996c72aefc\comctl32.dll
+0x64000000 - 0x640c2000 	C:\Users\chenlu\AppData\Local\Temp\QtJambi_chenlu_x86_4.7.1_msvc2008-20101128-1649\lib\QtNetwork4.dll
+0x0cd10000 - 0x0cd55000 	C:\Users\chenlu\AppData\Local\Temp\QtJambi_chenlu_x86_4.7.1_msvc2008-20101128-1649\lib\phonon4.dll
+0x0e210000 - 0x0ec71000 	C:\Users\chenlu\AppData\Local\Temp\QtJambi_chenlu_x86_4.7.1_msvc2008-20101128-1649\lib\QtWebKit4.dll
+0x74a30000 - 0x74a39000 	C:\Windows\system32\VERSION.dll
+0x0dce0000 - 0x0dd2a000 	C:\Users\chenlu\AppData\Local\Temp\QtJambi_chenlu_x86_4.7.1_msvc2008-20101128-1649\lib\com_trolltech_qt_webkit.dll
+0x0dd30000 - 0x0dd8a000 	C:\Users\chenlu\AppData\Local\Temp\QtJambi_chenlu_x86_4.7.1_msvc2008-20101128-1649\lib\com_trolltech_qt_network.dll
+0x0dd90000 - 0x0ddb7000 	C:\Users\chenlu\AppData\Local\Temp\QtJambi_chenlu_x86_4.7.1_msvc2008-20101128-1649\plugins\codecs\qcncodecs4.dll
+0x0ddc0000 - 0x0ddec000 	C:\Users\chenlu\AppData\Local\Temp\QtJambi_chenlu_x86_4.7.1_msvc2008-20101128-1649\plugins\codecs\qjpcodecs4.dll
+0x0cfa0000 - 0x0cfb7000 	C:\Users\chenlu\AppData\Local\Temp\QtJambi_chenlu_x86_4.7.1_msvc2008-20101128-1649\plugins\codecs\qkrcodecs4.dll
+0x0ec80000 - 0x0ecaa000 	C:\Users\chenlu\AppData\Local\Temp\QtJambi_chenlu_x86_4.7.1_msvc2008-20101128-1649\plugins\codecs\qtwcodecs4.dll
+0x0ecc0000 - 0x0ecca000 	C:\Users\chenlu\AppData\Local\Temp\QtJambi_chenlu_x86_4.7.1_msvc2008-20101128-1649\plugins\imageformats\qgif4.dll
+0x0ece0000 - 0x0ed13000 	C:\Users\chenlu\AppData\Local\Temp\QtJambi_chenlu_x86_4.7.1_msvc2008-20101128-1649\plugins\imageformats\qjpeg4.dll
+0x0ed30000 - 0x0ed6a000 	C:\Users\chenlu\AppData\Local\Temp\QtJambi_chenlu_x86_4.7.1_msvc2008-20101128-1649\plugins\imageformats\qmng4.dll
+0x0ed80000 - 0x0edc8000 	C:\Users\chenlu\AppData\Local\Temp\QtJambi_chenlu_x86_4.7.1_msvc2008-20101128-1649\plugins\imageformats\qtiff4.dll
+0x0f040000 - 0x0f073000 	C:\Program Files\YouKu\YoukuClient\ikutm.dll
+0x74a40000 - 0x74a61000 	C:\Windows\system32\ntmarta.dll
+0x75fc0000 - 0x76005000 	C:\Windows\system32\WLDAP32.dll
+0x0f090000 - 0x0f0c2000 	C:\Program Files\YouKu\YoukuClient\ikutmco.dll
+0x74f40000 - 0x74f7c000 	C:\Windows\system32\mswsock.dll
+0x74a20000 - 0x74a25000 	C:\Windows\System32\wshtcpip.dll
+0x74f30000 - 0x74f36000 	C:\Windows\System32\wship6.dll
+0x74e00000 - 0x74e44000 	C:\Windows\system32\DNSAPI.dll
+0x740f0000 - 0x7410c000 	C:\Windows\system32\IPHLPAPI.DLL
+0x740e0000 - 0x740e7000 	C:\Windows\system32\WINNSI.DLL
+0x70680000 - 0x70686000 	C:\Windows\system32\rasadhlp.dll
+0x73d10000 - 0x73d48000 	C:\Windows\System32\fwpuclnt.dll
+0x747a0000 - 0x747d9000 	C:\Windows\system32\MMDevAPI.DLL
+0x74640000 - 0x74735000 	C:\Windows\system32\PROPSYS.dll
+0x73150000 - 0x73180000 	C:\Windows\system32\wdmaud.drv
+0x73140000 - 0x73144000 	C:\Windows\system32\ksuser.dll
+0x74790000 - 0x74797000 	C:\Windows\system32\AVRT.dll
+0x771e0000 - 0x7737d000 	C:\Windows\system32\SETUPAPI.dll
+0x755a0000 - 0x755c7000 	C:\Windows\system32\CFGMGR32.dll
+0x75550000 - 0x75562000 	C:\Windows\system32\DEVOBJ.dll
+0x730b0000 - 0x730e6000 	C:\Windows\system32\AUDIOSES.DLL
+0x72f30000 - 0x72f38000 	C:\Windows\system32\msacm32.drv
+0x72f10000 - 0x72f24000 	C:\Windows\system32\MSACM32.dll
+0x72f00000 - 0x72f07000 	C:\Windows\system32\midimap.dll
+0x75f30000 - 0x75fb3000 	C:\Windows\system32\CLBCatQ.DLL
+0x754d0000 - 0x754db000 	C:\Windows\system32\profapi.dll
+0x70290000 - 0x703ff000 	C:\Windows\system32\explorerframe.dll
+0x731d0000 - 0x731ff000 	C:\Windows\system32\DUser.dll
+0x73200000 - 0x732b2000 	C:\Windows\system32\DUI70.dll
+0x72fb0000 - 0x730ab000 	C:\Windows\system32\WindowsCodecs.dll
+0x6fdb0000 - 0x6fde4000 	C:\Program Files\360\360safe\safemon\360UDiskGuard.dll
+0x6fd70000 - 0x6fda1000 	C:\Windows\system32\EhStorShell.dll
+0x6fd00000 - 0x6fd6a000 	C:\Windows\System32\cscui.dll
+0x6fcf0000 - 0x6fcf9000 	C:\Windows\System32\CSCDLL.dll
+0x70750000 - 0x7075b000 	C:\Windows\system32\CSCAPI.dll
+0x70760000 - 0x707cf000 	C:\Windows\system32\ntshrui.dll
+0x75350000 - 0x75369000 	C:\Windows\system32\srvcli.dll
+0x741f0000 - 0x741fa000 	C:\Windows\system32\slc.dll
+0x6f510000 - 0x6f53a000 	C:\Windows\system32\msls31.dll
+0x6f4b0000 - 0x6f508000 	C:\Program Files\Common Files\microsoft shared\ink\tiptsf.dll
+0x730f0000 - 0x7311f000 	C:\Windows\system32\xmllite.dll
+0x65a90000 - 0x65aec000 	C:\Windows\System32\StructuredQuery.dll
+0x753c0000 - 0x753c8000 	C:\Windows\System32\Secur32.dll
+0x753e0000 - 0x753fa000 	C:\Windows\system32\SSPICLI.DLL
+0x6f8c0000 - 0x6f90e000 	C:\Windows\system32\actxprxy.dll
+0x65cc0000 - 0x65ceb000 	C:\Program Files\Internet Explorer\ieproxy.dll
+0x59f60000 - 0x59f76000 	C:\Windows\system32\thumbcache.dll
+0x74740000 - 0x7476e000 	C:\Windows\system32\SHDOCVW.dll
+0x71640000 - 0x720bc000 	C:\Windows\system32\ieframe.DLL
+0x722e0000 - 0x7231c000 	C:\Windows\system32\OLEACC.dll
+0x75980000 - 0x75b79000 	C:\Windows\system32\iertutil.dll
+0x55aa0000 - 0x55c38000 	C:\Windows\system32\NetworkExplorer.dll
+0x51600000 - 0x5169f000 	C:\Windows\system32\SearchFolder.dll
+0x72460000 - 0x72469000 	C:\Windows\system32\LINKINFO.dll
+0x70690000 - 0x706a2000 	C:\Windows\system32\MPR.dll
+0x6f210000 - 0x6f218000 	C:\Windows\System32\drprov.dll
+0x74bc0000 - 0x74be9000 	C:\Windows\System32\WINSTA.dll
+0x6f1e0000 - 0x6f1f4000 	C:\Windows\System32\ntlanman.dll
+0x6f1c0000 - 0x6f1d6000 	C:\Windows\System32\davclnt.dll
+0x6f1b0000 - 0x6f1b8000 	C:\Windows\System32\DAVHLPR.dll
+0x73f30000 - 0x73f3f000 	C:\Windows\system32\wkscli.dll
+0x73f40000 - 0x73f49000 	C:\Windows\system32\netutils.dll
+0x6ae60000 - 0x6aee9000 	C:\Windows\system32\PortableDeviceApi.dll
+0x75570000 - 0x7559d000 	C:\Windows\system32\WINTRUST.dll
+0x75660000 - 0x7577c000 	C:\Windows\system32\CRYPT32.dll
+0x75540000 - 0x7554c000 	C:\Windows\system32\MSASN1.dll
+0x579e0000 - 0x57a02000 	C:\Windows\system32\EhStorAPI.dll
+0x73d80000 - 0x73d8f000 	C:\Windows\system32\samcli.dll
+
+VM Arguments:
+jvm_args: -Dfile.encoding=GBK 
+java_command: com.liu.ui.CrawlerImpl
+Launcher Type: SUN_STANDARD
+
+Environment Variables:
+JAVA_HOME=C:\Program Files\Java\jdk1.7.0_03
+CLASSPATH=.;C:\Program Files\Java\jdk1.7.0_03\lib;C:\Program Files\Java\jdk1.7.0_03\lib\dt.jar;C:\Program Files\Java\jdk1.7.0_03\lib\tools.jar
+PATH=C:/Users/chenlu/AppData/Local/MyEclipse/Common/binary/com.sun.java.jdk.win32.x86_1.6.0.013/jre/bin/client;C:/Users/chenlu/AppData/Local/MyEclipse/Common/binary/com.sun.java.jdk.win32.x86_1.6.0.013/jre/bin;C:/Users/chenlu/AppData/Local/MyEclipse/Common/binary/com.sun.java.jdk.win32.x86_1.6.0.013/jre/lib/i386;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\Java\jdk1.7.0_03\bin;C:\Program Files\Java\jdk1.7.0_03\jre\bin
+USERNAME=chenlu
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=x86 Family 6 Model 15 Stepping 13, GenuineIntel
+
+
+
+---------------  S Y S T E M  ---------------
+
+OS: Windows NT 6.1 Build 7600 
+
+CPU:total 2 (2 cores per cpu, 1 threads per core) family 6 model 15 stepping 13, cmov, cx8, fxsr, mmx, sse, sse2, sse3, ssse3
+
+Memory: 4k page, physical 2097151k(882592k free), swap 4194303k(3356020k free)
+
+vm_info: Java HotSpot(TM) Client VM (11.3-b02) for windows-x86 JRE (1.6.0_13-b03), built on Mar  9 2009 01:15:24 by "java_re" with MS VC++ 7.1
+
+time: Fri Jul 12 14:38:18 2013
+elapsed time: 1170 seconds
+
